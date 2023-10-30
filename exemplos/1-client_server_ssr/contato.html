@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato</title>
+  </head>
+  <body>
+    <!-- O action apontando direto para um arquivo envia.py não funciona porque o servidor não é habilitado para requisições de escrita -->
+    <!-- Vamos habilitá-lo então!  -->
+    <!-- Os servidores antigos usavam um protocolo chamado CGI (Common Gateway Interface) para fazer essa habilitação -->
+    <!-- Até hoje o CGI é utilizado, mas cada linguagem o adaptou à sua maneira para outros protocolos -->
+    <!-- No PHP, por exemplo, é usado o FastCGI. No Python, temos o WSGI e o ASGI. -->
+    <!-- O padrão criado pelo Apache (que era o servidor mais usado na época (hoje é o NGINX)) é de que deve existir uma pasta na raíz do projeto chamada cgi-bin. Vá até essa pasta caso queira mais informações :) -->
+    <form action="cgi-bin/envia.py" method="post">
+      <label for="nome">Nome:</label><br />
+      <input type="text" name="nome" /><br />
+      <label for="mensagem">Mensagem:</label><br />
+      <textarea name="mensagem" cols="30" rows="5"></textarea><br />
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>
